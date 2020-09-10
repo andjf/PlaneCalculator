@@ -59,6 +59,7 @@ def negative_format(number):
 def get_variable_portion(var, number):
     if number != 0:
         return "({0}{1})".format(var, negative_format(number))
+    return var
 
 def get_cof_portion(cof, first):
     build = ""
