@@ -14,20 +14,9 @@ ENTRY_BACKGROUND = 'white'
 class Vector(object):
     def __init__(self,x=0,y=0,z=0, marked=False):
         self.marked = marked
-        if x % 1 <= DECIMAL_ERROR_TOLERANCE:
-            self.x = int(x)
-        else:
-            self.x = x
-
-        if y % 1 <= DECIMAL_ERROR_TOLERANCE:
-            self.y = int(y)
-        else:
-            self.y = y
-
-        if z % 1 <= DECIMAL_ERROR_TOLERANCE:
-            self.z = int(z)
-        else:
-            self.z = z
+        self.x = int(x) if x % 1 <= DECIMAL_ERROR_TOLERANCE else float(x)
+        self.y = int(y) if y % 1 <= DECIMAL_ERROR_TOLERANCE else float(y)
+        self.z = int(z) if z % 1 <= DECIMAL_ERROR_TOLERANCE else float(z)
 
     def sub(self, other):
         return Vector(self.x - other.x, self.y - other.y, self.z - other.z)
