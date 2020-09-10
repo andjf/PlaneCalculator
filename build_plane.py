@@ -1,3 +1,8 @@
+"""
+@author Andrew Ferrin
+9.10.2020
+"""
+
 from tkinter import *
 
 NUMBER_OF_POINTS = 3
